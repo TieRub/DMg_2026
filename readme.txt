@@ -1,5 +1,5 @@
 Create Virtual Env
-    python -m venv venv
+    python3 -m venv venv
 Activate Virtual Env
     source venv/bin/activate
     venv\Scripts\activate #Win
