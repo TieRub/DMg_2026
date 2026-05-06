@@ -4,6 +4,7 @@ seaborn
 matplotlib
 scikit-learn
 seaborn
+sklearn
 
 jupyterlab
 ipykernel
