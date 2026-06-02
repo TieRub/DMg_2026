@@ -1,0 +1,45 @@
+owner	Type	Code	Reason
+IW	returnReason	n/a	Kein Grund vorhanden
+IW	returnReason	UNKOWN	Unbekannt
+IW	returnReason	ASSORTMENT	Mehrere Artikel zur Auswahl bestellt
+IW	returnReason	DAMAGEinTRANSIT	Transportschaden
+IW	returnReason	CARRIERRETURN	Carrier Retoure
+IW	returnReason	DAMAGED	Defekt / Verschmutzt
+IW	returnReason	DIFFRENT	Artikel anders als in Shop dargestellt
+IW	returnReason	REPAIR	Artikel reparieren
+IW	returnReason	MISDELIVERY	Fehllieferung
+IW	returnReason	INCORRECT	Artikel fehlerhaft
+IW	returnReason	NOTNEEDED	Kein Bedarf
+IW	returnReason	DONTLIKE	Artikel gefällt nicht
+IW	returnReason	OTHER	Sonstiges
+IW	returnReason	TOBIG	Artikel zu groß
+IW	returnReason	TOLATE	Artikel zu spät geliefert
+IW	returnReason	TOSHORT	Artikel zu klein
+IW	returnReason	REPAIR	Artikel reparieren
+IW	returnReason	REJECTION	Retourenabweisung
+IW	returnReason	UNKNOWN	Unbekannt
+IW	returnType	CARRIER_NA	Carrier: nicht angetroffen / nicht abgeholt
+IW	returnType	CARRIER_AV	Carrier: Annahme verweigert
+IW	returnType	CARRIER_UV	Carrier: unbekannt verzogen
+IW	returnType	CARRIER_NZ	Carrier: nicht zustellbar
+IW	returnType	CARRIER_SO	Carrier: sonstige 
+IW	returnType	CUSTOMER_RA	Kunde: Ret.-Aufkleber
+IW	returnType	CUSTOMER_PB	Kunde: Porto bezahlt
+IW	returnType	CUSTOMER_UF	Kunde: Unfrei
+IW	returnType	RETURN	Retoure
+IW	returnType	n/a	Unbekannt
+IW	payment	BANKCOLL	Bankeinzug
+IW	payment	PAID	Bezahlt
+IW	payment	GIFTCARD	GiftCard
+IW	payment	COUPON	Gutschein
+IW	payment	AMEX	Kreditkarte AMEX
+IW	payment	KREDITCARD	Kreditkarte
+IW	payment	MASTER	Kreditkarte MASTER
+IW	payment	VISA	Kreditkarte VISA
+IW	payment	COD 	Nachnahme
+IW	payment	NULL	Nullwert
+IW	payment	BILL	Rechnung
+IW	payment	IDEAL	Sofortüberweisung iDeal
+IW	payment	TRANSFER	Sofortüberweisung.de
+IW	payment	PREPAYMENT	Vorkasse
+IW	payment	n/a	Zahlart  nicht angegeben

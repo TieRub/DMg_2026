@@ -1,0 +1,8 @@
+productGroup	title	germanTitle
+164	Dresses	Kleider
+233	Pants	Hosen
+234	Denim Pants	Jeans
+206	T-Shirts	T-Shirts
+252	Shoes	Schuhe
+254	Accessories	Accessoires
+253	Underwear	Unterwäsche
