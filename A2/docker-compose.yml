@@ -1,0 +1,31 @@
+services:
+  db:
+    image: mariadb:11.8.2
+    environment:
+      MARIADB_DATABASE: mydb
+      MARIADB_ROOT_PASSWORD: admin
+      MARIADB_USER: restServer
+      MARIADB_PASSWORD: rest
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  web:
+    build: ./
+    ports:
+      - "8080:8080"
+    environment:
+      - MARIADB_USER=restServer
+      - MARIADB_PASSWORD=rest
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./Rest_API.py:/rest_api.py
+    command: python /rest_api.py
+    restart: on-failure
