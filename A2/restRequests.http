@@ -1,493 +1,510 @@
-###Post multiple clients
-POST http://127.0.0.1:8080/clients
+### Post multiple customers
+POST http://127.0.0.1:8080/customers
 Content-Type: application/json
 
 [
   {
-        "name": "Test user1"
+    "name": "Test customer1"
   },
   {
-    "name": "Test user2"
+    "name": "Test customer2"
   }
 ]
 
 ###
 > {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
 %}
 
 
-###Post single client
-POST http://127.0.0.1:8080/clients
-Content-Type: application/json
-
-[
-    {
-        "name": "Test user3"
-    }
-]
-
-###
-> {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
-%}
-
-
-###Put clients
-PUT http://127.0.0.1:8080/clients
-Content-Type: application/json
-
-[
-    {
-      "id": 3,
-      "name": "Test user4",
-      "rides": []
-    },
-    {
-      "id": 1,
-      "name": "put to user1",
-      "rides": []
-    }
-]
-
-###
-> {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
-%}
-
-
-### Get all Clients
-GET http://127.0.0.1:8080/clients
-
-> {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
-%}
-
-### Patch multiple clients
-PATCH http://127.0.0.1:8080/clients
-Content-Type: application/json
-
-[
-    {
-      "id": 3,
-      "name": "user3"
-    },
-    {
-      "id": 1,
-      "name": "user1"
-    }
-]
-
-###
-> {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
-%}
-
-### Get single Client
-GET http://127.0.0.1:8080/clients/1
-
-> {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
-%}
-
-### Patch Client
-PATCH http://127.0.0.1:8080/clients/1
-Content-Type: application/json
-
-{
-  "name": "Test user1patched"
-}
-
-###
-> {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
-%}
-
-###Post multiple Drivers
-POST http://127.0.0.1:8080/drivers
+### Post single customer
+POST http://127.0.0.1:8080/customers
 Content-Type: application/json
 
 [
   {
-    "name": "Test user1",
-    "licensePlate": "RZ-AB-1234"
-  },
-  {
-    "name": "Test user2",
-    "licensePlate": "HL-XY-1234"
+    "name": "Test customer3"
   }
-
 ]
 
 ###
 > {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
-%}
-###Post single Driver
-POST http://127.0.0.1:8080/drivers
-Content-Type: application/json
-
-[
-    {
-        "name": "Test user3",
-        "licensePlate": "HL-AA-3333"
-    }
-]
-
-###
-> {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
 %}
 
-###Put Multiple Driver
-PUT http://127.0.0.1:8080/drivers
+
+### Put customers
+PUT http://127.0.0.1:8080/customers
 Content-Type: application/json
 
 [
   {
     "id": 3,
-    "name": "Test driver3",
-    "licensePlate": "HL-ES-1212",
-    "rides": []
+    "name": "Test customer4",
+    "orders": []
   },
   {
     "id": 1,
-    "name": "Test driver1",
-    "licensePlate": "HL-PUT-1111",
-    "rides": []
+    "name": "put to customer1",
+    "orders": []
   }
 ]
 
 ###
 > {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
 %}
 
-### Get all Drivers
-GET http://127.0.0.1:8080/drivers
 
+### Get all Customers
+GET http://127.0.0.1:8080/customers
+
+###
 > {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
 %}
 
-### Get single Driver
-GET http://127.0.0.1:8080/drivers/2
 
+### Patch multiple customers
+PATCH http://127.0.0.1:8080/customers
+Content-Type: application/json
+
+[
+  {
+    "id": 3,
+    "name": "customer3"
+  },
+  {
+    "id": 1,
+    "name": "customer1"
+  }
+]
+
+###
 > {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
 %}
 
-### Patch Driver
-PATCH http://127.0.0.1:8080/drivers/2
+
+### Get single Customer
+GET http://127.0.0.1:8080/customers/1
+
+###
+> {%
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
+%}
+
+
+### Patch Customer
+PATCH http://127.0.0.1:8080/customers/1
 Content-Type: application/json
 
 {
-    "name": "Test driver2"
+  "name": "Test customer1patched"
 }
 
 ###
 > {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
 %}
 
-###Post single Ride
-POST http://127.0.0.1:8080/rides
+
+### Post multiple Products
+POST http://127.0.0.1:8080/products
 Content-Type: application/json
 
 [
-    {
-        "rideDate": "2025-07-09",
-        "distance": 15,
-        "price": 40,
-        "driver_id": 1,
-        "client_id": 1
-    }
-]
-
-###
-> {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
-%}
-
-###Post multiple Rides
-POST http://127.0.0.1:8080/rides
-Content-Type: application/json
-
-[
-    {
-        "rideDate": "2025-07-09",
-        "distance": 14,
-        "price": 36,
-        "driver_id": 1,
-        "client_id": 3
-    },
-    {
-        "rideDate": "2025-07-09",
-        "distance": 4,
-        "price": 9,
-        "driver_id": 3,
-        "client_id": 1
-    }
-]
-
-###Put multiple Rides
-PUT http://127.0.0.1:8080/rides
-Content-Type: application/json
-
-[
-    {
-        "id": 1,
-        "rideDate": "2025-07-08",
-        "distance": 44,
-        "price": 55,
-        "driver_id": 3,
-        "client_id": 3,
-        "waypoints": []
-    },
   {
-    "id": 3,
-    "rideDate": "2025-08-08",
-    "distance": 10,
-    "price": 30,
-    "driver_id": 1,
-    "client_id": 1,
-    "waypoints": []
+    "title": "Product A",
+    "price": 499
+  },
+  {
+    "title": "Product B",
+    "price": 1250
   }
 ]
 
 ###
 > {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
 %}
-### Put single Ride
-PUT http://127.0.0.1:8080/rides/2
+
+
+### Post single Product
+POST http://127.0.0.1:8080/products
+Content-Type: application/json
+
+[
+  {
+    "title": "Product C",
+    "price": 2500
+  }
+]
+
+###
+> {%
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
+%}
+
+
+### Put Multiple Products
+PUT http://127.0.0.1:8080/products
+Content-Type: application/json
+
+[
+  {
+    "id": 3,
+    "title": "Updated Product C",
+    "price": 2700
+  },
+  {
+    "id": 1,
+    "title": "Updated Product A",
+    "price": 450
+  }
+]
+
+###
+> {%
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
+%}
+
+
+### Get all Products
+GET http://127.0.0.1:8080/products
+
+###
+> {%
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
+%}
+
+
+### Get single Product
+GET http://127.0.0.1:8080/products/1
+
+###
+> {%
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
+%}
+
+
+### Patch Product
+PATCH http://127.0.0.1:8080/products/1
+Content-Type: application/json
+
+{
+  "title": "Patched Product B"
+}
+
+###
+> {%
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
+%}
+
+
+### Post single Order
+POST http://127.0.0.1:8080/orders
+Content-Type: application/json
+
+[
+  {
+    "orderDate": "2026-07-09",
+    "customer_id": 1
+  }
+]
+
+###
+> {%
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
+%}
+
+
+### Post multiple Orders
+POST http://127.0.0.1:8080/orders
+Content-Type: application/json
+
+[
+  {
+    "orderDate": "2026-07-10",
+    "customer_id": 3
+  },
+  {
+    "orderDate": "2026-07-11",
+    "customer_id": 1
+  }
+]
+
+###
+> {%
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
+%}
+
+
+### Put multiple Orders
+PUT http://127.0.0.1:8080/orders
+Content-Type: application/json
+
+[
+  {
+    "id": 1,
+    "orderDate": "2026-07-08",
+    "customer_id": 3,
+    "positions": []
+  },
+  {
+    "id": 3,
+    "orderDate": "2026-08-08",
+    "customer_id": 1,
+    "positions": []
+  }
+]
+
+###
+> {%
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
+%}
+
+
+### Put single Order
+PUT http://127.0.0.1:8080/orders/2
 Content-Type: application/json
 
 {
   "id": 2,
-  "number": 22,
-  "rideDate": "2024-03-05",
-  "distance": 20,
-  "price": 63,
-  "driver_id": 1,
-  "client_id": 1,
-  "waypoints": []
+  "orderDate": "2026-03-05",
+  "customer_id": 1,
+  "positions": []
 }
 
 ###
 > {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
 %}
-### Get all Rides
-GET http://127.0.0.1:8080/rides
 
-> {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
-%}
-### Get single Ride
-GET http://127.0.0.1:8080/rides/3
 
+### Get all Orders
+GET http://127.0.0.1:8080/orders
+
+###
 > {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
 %}
-### Patch multiple Rides
-PATCH http://127.0.0.1:8080/rides
+
+
+### Get single Order
+GET http://127.0.0.1:8080/orders/2
+
+###
+> {%
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
+%}
+
+
+### Patch multiple Orders
+PATCH http://127.0.0.1:8080/orders
 Content-Type: application/json
 
 [
   {
     "id": 1,
-    "client_id": 1
+    "customer_id": 1
   },
   {
     "id": 3,
-    "client_id": 3
+    "customer_id": 3
   }
 ]
 
 ###
 > {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
 %}
-### Patch Ride
-PATCH http://127.0.0.1:8080/rides/1
+
+
+### Patch Order
+PATCH http://127.0.0.1:8080/orders/2
 Content-Type: application/json
 
 {
-  "rideDate": "2025-07-06"
+  "orderDate": "2026-07-06"
 }
 
 ###
 > {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
 %}
-###Post single waypoint
-POST http://127.0.0.1:8080/rides/1/waypoints
+
+
+### Post single position
+POST http://127.0.0.1:8080/orders/1/positions
 Content-Type: application/json
 
 [
-    {
-        "number": 1,
-        "latitude": 44.3,
-        "longitude": 116.0
-    }
-]
-
-###
-> {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
-%}
-###Post multiple waypoints
-POST http://127.0.0.1:8080/rides/1/waypoints
-Content-Type: application/json
-
-[
-    {
-        "number": 4,
-        "latitude": 222.2,
-        "longitude": -71.7
-    },
-    {
-        "number": 11,
-        "latitude": 123.321,
-        "longitude": 321.123
-    }
-]
-
-###
-> {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
-%}
-###Put single waypoints
-PUT http://127.0.0.1:8080/rides/1/waypoints
-Content-Type: application/json
-
-[
-    {
-        "id": 1,
-        "number": 1,
-        "latitude": 44.3,
-        "longitude": 265.76,
-        "ride_id": 1
-    },
   {
-    "id": 2,
-    "number": 2,
-    "latitude": 30.5,
-    "longitude": 222.5,
-    "ride_id": 1
+    "quantity": 2,
+    "buyingPrice": 450,
+    "product_id": 1
   }
 ]
 
 ###
 > {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
 %}
-### Patch Waypoints
-PATCH http://127.0.0.1:8080/rides/1/waypoints
+
+
+### Post multiple positions
+POST http://127.0.0.1:8080/orders/1/positions
+Content-Type: application/json
+
+[
+  {
+    "quantity": 1,
+    "buyingPrice": 1250,
+    "product_id": 2
+  },
+  {
+    "quantity": 5,
+    "buyingPrice": 2500,
+    "product_id": 3
+  }
+]
+
+###
+> {%
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
+%}
+
+
+### Put single positions
+PUT http://127.0.0.1:8080/orders/1/positions/1
 Content-Type: application/json
 
 [
   {
     "id": 1,
-    "latitude": -44.3
+    "quantity": 3,
+    "buyingPrice": 440,
+    "product_id": 1,
+    "order_id": 1
   },
   {
     "id": 2,
-    "longitude": 32.6
+    "quantity": 2,
+    "buyingPrice": 1200,
+    "product_id": 2,
+    "order_id": 1
   }
 ]
 
 ###
 > {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
 %}
-### Get all Waypoints
-GET http://127.0.0.1:8080/rides/1/waypoints
 
-> {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
-%}
-###Delete Waypoint
-DELETE http://127.0.0.1:8080/rides/1/waypoints
+
+### Patch Positions
+PATCH http://127.0.0.1:8080/orders/1/positions
 Content-Type: application/json
 
 [
   {
-    "id": 1
-  }
-]
-
-> {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
-%}
-###Delete multiple Drivers
-DELETE http://127.0.0.1:8080/drivers
-Content-Type: application/json
-
-[
-  {
-    "id": 1
+    "id": 1,
+    "quantity": 4
   },
   {
-    "id": 3
+    "id": 2,
+    "buyingPrice": 1150
   }
 ]
 
+###
 > {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
-%}
-###Delete Client
-DELETE http://127.0.0.1:8080/clients/2
-
-> {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
-%}
-###Delete Driver
-DELETE http://127.0.0.1:8080/drivers/2
-
-> {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
 %}
 
-###Delete Ride 1
-DELETE http://127.0.0.1:8080/rides/1
 
+### Get all Positions for an Order
+GET http://127.0.0.1:8080/orders/1/positions
+
+###
 > {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
 %}
-###Delete Rides
-DELETE http://127.0.0.1:8080/rides
+
+
+### Delete Position
+DELETE http://127.0.0.1:8080/orders/1/positions
+Content-Type: application/json
+
+[
+  {
+    "id": 1
+  }
+]
+
+###
+> {%
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
+%}
+
+
+### Delete multiple Products
+DELETE http://127.0.0.1:8080/products
 Content-Type: application/json
 
 [
@@ -499,24 +516,60 @@ Content-Type: application/json
   }
 ]
 
+###
 > {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
 %}
-###Delete Clients
-DELETE http://127.0.0.1:8080/clients
+
+
+### Delete Customer
+DELETE http://127.0.0.1:8080/customers/1
+
+###
+> {%
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
+%}
+
+
+### Delete Product
+DELETE http://127.0.0.1:8080/products/1
+
+###
+> {%
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
+%}
+
+
+### Delete Order 1
+DELETE http://127.0.0.1:8080/orders/1
+
+###
+> {%
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
+%}
+
+
+### Delete Orders
+DELETE http://127.0.0.1:8080/orders
 Content-Type: application/json
 
 [
   {
-    "id": 1
-  },
-  {
-    "id": 3
+    "id": 2
   }
 ]
 
+###
 > {%
-client.test("Status OK",function() {
-  client.assert(response.status === 200,"Fehler")});
+client.test("Status OK", function() {
+  client.assert(response.status === 200, "Fehler");
+});
 %}
